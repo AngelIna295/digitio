@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Digitio – šablony pro podnikatele</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ШАПКА САЙТУ -->
+    <header>
+        <div class="nav">
+
+            <div class="logo"
+                 onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                ✦ Digitio
+            </div>
+
+            <span class="link"
+                  onclick="showSection('catalog')">
+                Produkty
+            </span>
+
+            <button class="nav-tab" id="bundlesTab" onclick="showSection('bundles')">
+                Zvýhodněné balíčky
+            </button>
+
+            <span class="link" onclick="showOrders()">
+                Moje objednávky
+            </span>
+
+            <input
+                id="search"
+                type="text"
+                oninput="render()"
+                placeholder="🔎 Hledat digitální produkty..."
+            >
+
+            <button class="btn" onclick="showCart()">
+                🛒 Košík <span id="count">0</span>
+            </button>
+
+        </div>
+    </header>
+
+    <!-- ОСНОВНИЙ ВМІСТ -->
+    <main class="wrap">
+
+        <!-- ГОЛОВНИЙ БАНЕР -->
+        <section class="hero" id="hero">
+
+            <div>
+                <div>✨ Šablony pro vaše podnikání</div>
+
+                <h1>
+                    Tvořte chytřeji.<br>
+                    Začněte hned.
+                </h1>
+
+                <p>
+                    Praktické náhledy šablon pro finance,
+                    podnikatelské plánování a marketing.
+                    Prohlédněte si kolekce a jejich ukázky.
+                </p>
+
+                <button
+                    class="btn hero-btn"
+                    onclick="showSection('catalog')">
+                    Prozkoumat produkty →
+                </button>
+            </div>
+
+            <div class="emoji">
+                💻✨
+            </div>
+
+        </section>
+
+        <!-- КАТАЛОГ ТОВАРІВ -->
+        <section id="catalog">
+
+            <h2>Objevte naše produkty</h2>
+
+            <p class="muted" id="catalogCount"></p>
+
+            <div class="filters" id="filters"></div>
+
+            <div class="grid" id="grid"></div>
+
+        </section>
+
+        <!-- ОКРЕМА ВКЛАДКА З ПАКЕТАМИ -->
+        <section id="bundles" class="bundles-section" hidden>
+            <div class="bundles-intro">
+                <span class="bundles-eyebrow">✨ Digitio · výhodné kolekce</span>
+                <h1>Zvýhodněné balíčky</h1>
+                <p>Vyberte si sadu šablon pro podnikání, finance nebo marketing za jednu přehlednou cenu.</p>
+            </div>
+            <div class="bundle-grid" id="bundleGrid"></div>
+            <p class="muted bundle-disclaimer">Toto je demo e-shopu. Objednávka je simulovaná; soubory těchto balíčků nejsou v archivu přiloženy.</p>
+        </section>
+
+        <!-- ІНФОРМАЦІЙНИЙ БЛОК -->
+        <section class="notice" id="siteNotice" style="margin-top: 45px;">
+
+            ⚡ <b>Digitální kolekce</b> ·
+            🔒 <b>Jednoduchý nákup</b> ·
+            🖼️ <b>Ukázky šablon</b>
+
+            <p class="muted">
+                Toto je demonstrační e-shop.
+                Platby jsou simulované.
+                Archiv obsahuje obrázky,
+                nikoliv editovatelné šablony.
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- НИЖНЯ ЧАСТИНА САЙТУ -->
+    <footer>
+        © 2026 Digitio · Demo e-shopu ·
+        Kontakt: info@digitio.example
+    </footer>
+
+    <!-- СПЛИВАЮЧЕ ВІКНО -->
+    <div
+        class="overlay"
+        id="overlay"
+        onclick="if(event.target === this) closePanel()">
+
+        <div class="panel">
+
+            <button class="close" onclick="closePanel()">
+                ✕
+            </button>
+
+            <div id="panelContent"></div>
+
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
